@@ -18,11 +18,21 @@ import java.io.Serializable;
 @Entity
 public class Person implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
     private String name;
-    @Id
+
+    @Column(nullable = false)
     private String surname;
-    @Id
+    
+    @Column(nullable = false)
     private int age;
+    
+    @Column(nullable = false)
     private int phone_number;
-    private String city_of_living;
+    
+    @Column(name = "city_of_living")
+    private String city;
 }
